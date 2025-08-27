@@ -193,5 +193,5 @@ scheduler = BackgroundScheduler(timezone=tz)
 scheduler.add_job(send_reminders, CronTrigger(hour=15, minute=0, timezone=tz))
 scheduler.start()
 
-print("Бот запущен...")
+print("Бот запущен...", flush=True)
 bot.polling(none_stop=True)
