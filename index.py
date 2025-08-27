@@ -7,10 +7,16 @@ import datetime
 import time
 import json
 import os
+from dotenv import load_dotenv
 # Токен от BotFather
+
+load_dotenv()
 
 TOKEN = os.getenv("TOKEN")
 ADMIN_ID = os.getenv("ADMIN_ID")
+
+if ADMIN_ID:
+    ADMIN_ID = int(ADMIN_ID)
 
 bot = telebot.TeleBot(TOKEN)
 
