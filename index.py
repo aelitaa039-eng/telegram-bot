@@ -15,10 +15,14 @@ load_dotenv()
 TOKEN = os.getenv("TOKEN")
 ADMIN_ID = os.getenv("ADMIN_ID")
 
+print("TOKEN:", TOKEN, flush=True)
+print("ADMIN_ID:", ADMIN_ID, flush=True)
+
 if ADMIN_ID:
     ADMIN_ID = int(ADMIN_ID)
 
 bot = telebot.TeleBot(TOKEN)
+print("Запуск бота...", flush=True)
 
 DATA_FILE = "subscribers.json"
 QUESTIONS_FILE = "questions.json"
@@ -194,4 +198,4 @@ scheduler.add_job(send_reminders, CronTrigger(hour=15, minute=0, timezone=tz))
 scheduler.start()
 
 print("Бот запущен...", flush=True)
-bot.polling(none_stop=True)
+bot.infinity_polling()
