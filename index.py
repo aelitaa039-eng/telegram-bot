@@ -8,8 +8,9 @@ import time
 import json
 import os
 # Токен от BotFather
-TOKEN = "7137218600:AAE4crtsslgujJhEeGRcECZjS-_BDQnH16w"
-ADMIN_ID = 1235063757  # сюда потом вставишь своё число chat_id
+
+TOKEN = os.getenv("TOKEN")
+ADMIN_ID = os.getenv("ADMIN_ID")
 
 bot = telebot.TeleBot(TOKEN)
 
